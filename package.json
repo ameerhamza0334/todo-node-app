@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "mocha tests/*.test.js",
-    "start": "nodemon server.js "
+    "start": "node server.js",
+    "heroku-postbuild": "mocha tests/*.test.js && node server.js"
   },
   "author": "ameer hamza",
   "license": "ISC",
