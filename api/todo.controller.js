@@ -12,4 +12,9 @@ export default class TodoController {
         next(insertedResponse)
     }
 
+    async deleteTodo(req, res, next) {
+        let deletedResp = await todoServ.deleteTodo(req.params.id)
+        next(deletedResp)
+    }
+
 }

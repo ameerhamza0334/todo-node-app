@@ -5,6 +5,7 @@ import config from '../config/index.js'
 describe('testing todos', () => {
     let expect = new Object()
     let todoServ = new Object()
+    let saveResp;
     before(async () => {
         expect = chai.expect
         todoServ = new todoService()
@@ -17,9 +18,22 @@ describe('testing todos', () => {
             todo: 'let the test begin'
         }
 
-        let saveResponse = await todoServ.insertTodo(mockBody)
-        expect(saveResponse.isError).is.false
+        saveResp = await todoServ.insertTodo(mockBody)
+        expect(saveResp.isError).is.false
     })
 
+    it('should fail in case of empty input', async () => {
 
+        let mockBody = {
+            todo: ''
+        }
+
+        let saveResponse = await todoServ.insertTodo(mockBody)
+        expect(saveResponse.isError).is.true
+    })
+
+    it('should delete the newly added todo from the list', async () => {
+        let deleteResp = await todoServ.deleteTodo(saveResp.data['_id'])
+        expect(deleteResp.isError).is.false
+    })
 })

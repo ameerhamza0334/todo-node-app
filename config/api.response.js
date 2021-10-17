@@ -1,5 +1,5 @@
 export default class responseHandler {
-    apiSuccess(res, result = null, message = "success") {
+    static apiSuccess(res, result = null, message = "success") {
         res.status(200).json({
             error: false,
             message: message,
@@ -8,7 +8,7 @@ export default class responseHandler {
         });
     };
 
-    apiError(
+    static apiError(
         res,
         message = "Unable to process request",
         result = null,
