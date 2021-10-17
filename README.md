@@ -22,3 +22,9 @@ tests: Tests of all sorts
 
 # 3 Layer architecture
 The idea is to use the principle of separation of concerns to move the business logic away from the node.js API Routes. It’s just a collection of classes with clear purposes, following the SOLID principles applied to node.js.
+
+# How to Run
+- npm i 
+- npm start
+
+To run tests type "npm test"
