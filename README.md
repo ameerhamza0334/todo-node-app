@@ -1,7 +1,7 @@
 # TODO Backend
 This is the backend for the Todo App which consist of the backend server and it's connection to the database.
 
-## Tools and Technologies
+Tools and Technologies
   - Angular
   - Travis CI
   - Docker
