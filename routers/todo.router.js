@@ -7,5 +7,5 @@ const lRoute = Router();
 export default function (router) {
     router.use('/todo', lRoute)
     lRoute.post('/', todoCtrl.addTodo, response)
-    lRoute.delete('/', todoCtrl.addTodo, response)
+    lRoute.delete('/:id', todoCtrl.deleteTodo, response)
 }
