@@ -1,4 +1,4 @@
-FROM node:12-alpine3.14
+FROM node:17.0-alpine3.12
 WORKDIR /app
 COPY package.json /app
 RUN npm ci --only=production && npm cache clean --force
