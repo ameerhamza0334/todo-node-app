@@ -1,6 +1,13 @@
 # TODO Backend
 This is the backend for the Todo App which consist of the backend server and it's connection to the database.
 
+## Tools and Technologies
+  - Angular
+  - Travis CI
+  - Docker
+  - Heroku
+  - Github
+
 NPM Packages: 
 - express
 - mongoose
@@ -20,11 +27,14 @@ handlers: Response Handlers and Error Handlers
 routes: Contains all the API routes
 tests: Tests of all sorts
 
-# 3 Layer architecture
+## 3 Layer architecture
 The idea is to use the principle of separation of concerns to move the business logic away from the node.js API Routes. It’s just a collection of classes with clear purposes, following the SOLID principles applied to node.js.
 
-# How to Run
+## How to Run
 - npm i 
 - npm start
 
 To run tests type "npm test"
+
+## Continous Integration/Continous Deployement
+- Travis CI has been implemented in this project and after the tests runs successfully it dockerize the app and upload to heroku.
