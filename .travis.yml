@@ -1,0 +1,24 @@
+sudo: required
+dist: focal
+language: node_js
+node_js:
+  - "14.0"
+
+services:
+  - docker
+
+cache: npm
+
+before_script:
+  - npm install
+
+script:
+  - npm test
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker build -t todo-node-app .;
+    docker tag todo-node-app todo-node-app:$(git rev-parse --short HEAD);
+    docker login -u="$docker_user" -p="$docker_pass";
+    docker push todo-node-app;
+    fi
