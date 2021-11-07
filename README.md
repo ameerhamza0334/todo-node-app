@@ -2,7 +2,8 @@
 This is the backend for the Todo App which consist of the backend server and it's connection to the database.
 
 Tools and Technologies
-  - Angular
+  - NodeJs
+  - MongoDb
   - Travis CI
   - Docker
   - Heroku
