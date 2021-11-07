@@ -17,8 +17,7 @@ script:
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker build -t todo-node-app .;
-    docker tag todo-node-app todo-node-app:$(git rev-parse --short HEAD);
-    docker login -u="$docker_user" -p="$docker_pass";
-    docker push todo-node-app;
+    docker login -u _ -p $heroku_key registry.heroku.com;
+    docker build -t registry.heroku.com/todo-app-node-ameer/web .;
+    docker push registry.heroku.com/todo-app-node-ameer/web;
     fi
